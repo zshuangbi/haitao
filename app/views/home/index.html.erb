@@ -55,7 +55,13 @@
             <li class="devider"></li>   
             <li><a href="page_faq.html">Help</a></li>  
             <li class="devider"></li>   
-            <li><a href="page_login.html">Login</a></li>   
+
+            <% if user_signed_in? %>
+                <%= current_user.email %> Not you?
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :confirm =>"Are you sure?" %></li>   
+            <% else %>
+                <li><%= link_to "Sign In", new_user_session_path %></li>   
+            <% end %>
         </ul>
     </div>      
 </div><!--/top-->
