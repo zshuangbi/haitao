@@ -39,3 +39,6 @@ end
 
 # To use devise
 gem 'devise'
+
+# To use simple_form
+gem 'simple_form'
